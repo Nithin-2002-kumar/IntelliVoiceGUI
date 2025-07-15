@@ -1,0 +1,332 @@
+IntelliVoice Assistant User Manual
+Introduction
+IntelliVoice Assistant is a voice-activated desktop application designed to help you perform tasks on your Windows computer using voice or text commands. With a simple graphical interface, it allows you to open applications, search the web, manage files, control your mouse and keyboard, and perform system actions like checking the time or shutting down your computer. This user manual guides you through installing, using, and troubleshooting the IntelliVoice Assistant.
+System Requirements
+
+Operating System: Windows (required for text-to-speech and certain system commands).
+Hardware: A working microphone for voice input and speakers for audio output.
+Software:
+Python 3.6 or higher.
+Internet connection for web-based features (e.g., Google Speech Recognition, Wikipedia searches).
+
+
+Disk Space: Approximately 500 MB for Python dependencies and the spaCy language model.
+
+Installation
+
+Download the Application:
+
+Obtain the IntelliVoice Assistant files from the provided source (e.g., a repository or download link).
+Save the files (main.py, requirements.txt, etc.) in a folder named intellivoice.
+
+
+Install Python:
+
+If not already installed, download and install Python 3.6+ from python.org.
+Ensure the pip package manager is included (typically bundled with Python).
+
+
+Set Up a Virtual Environment (recommended):
+
+Open a command prompt in the intellivoice folder.
+Create a virtual environment:python -m venv venv
+
+
+Activate it:venv\Scripts\activate  # On Windows
+
+
+
+
+Install Dependencies:
+
+Install required Python packages:pip install -r requirements.txt
+
+
+Install the spaCy language model:python -m spacy download en_core_web_sm
+
+
+
+
+Verify Setup:
+
+Ensure your microphone is connected and working.
+Test audio output to confirm speakers are functional.
+
+
+
+Getting Started
+
+Launch the Application:
+
+Navigate to the intellivoice folder in the command prompt.
+Run the application:python main.py
+
+
+A window titled "IntelliVoice Assistant" (800x600 pixels) will appear, showing:
+A text area displaying the conversation.
+A text entry field for typing commands.
+Buttons: "🎤 Listen" (for voice input), "⚙️ Settings" (for configuration), and "❌ Exit" (to close).
+
+
+
+
+Initial Setup:
+
+Upon first launch, the assistant will say, "What is your name?" and wait for your response.
+Speak your name clearly into the microphone or type it in the text entry field and press Enter.
+The assistant will greet you (e.g., "Hello [Your Name]! How can I help you today?") and be ready for commands.
+
+
+
+Using IntelliVoice Assistant
+Interface Overview
+
+Text Area: Displays the conversation history (your commands in blue, assistant responses in green, errors in red).
+Text Entry Field: Type commands here and press Enter to submit.
+Listen Button (🎤): Click to toggle voice input. When active, it shows "🔴 Listening...".
+Settings Button (⚙️): Opens a settings window (currently minimal).
+Exit Button (❌): Closes the application.
+Status Bar: Shows the current state (e.g., "Listening..." or "Ready").
+
+Entering Commands
+You can interact with IntelliVoice using either voice or text commands.
+Voice Commands
+
+Click the "🎤 Listen" button to start listening (the button changes to "🔴 Listening...").
+Speak your command clearly (e.g., "Open Notepad" or "What time is it?").
+The assistant processes the command and responds via text and speech.
+To stop listening, click the button again (it reverts to "🎤 Listen").
+
+Text Commands
+
+Type your command in the text entry field (e.g., search wikipedia for Python).
+Press Enter to submit.
+The assistant processes and responds as with voice commands.
+
+Supported Commands
+IntelliVoice supports a variety of commands. Below is a list of key functionalities with example commands:
+System Operations
+
+Open Applications:
+Command: "Open Notepad" or "Open Calculator"
+Action: Opens the specified application (e.g., Notepad, Calculator).
+
+
+Open File Explorer:
+Command: "Open File Explorer"
+Action: Opens Windows File Explorer.
+
+
+Open Browser:
+Command: "Open browser"
+Action: Opens Google Chrome.
+
+
+Open Task Manager:
+Command: "Open Task Manager"
+Action: Opens Windows Task Manager.
+
+
+Open Settings:
+Command: "Open Settings"
+Action: Opens Windows Settings.
+
+
+
+File Management
+
+Create a File:
+Command: "Create a file named notes"
+Action: Creates a text file (e.g., notes.txt) in the current directory.
+
+
+Delete a File:
+Command: "Delete file notes.txt"
+Action: Prompts for confirmation, then deletes the specified file.
+
+
+List Files:
+Command: "List files in documents"
+Action: Lists files in the specified directory.
+
+
+Copy a File:
+Command: "Copy file notes.txt"
+Action: Asks for the destination, then copies the file.
+
+
+Move a File:
+Command: "Move file notes.txt"
+Action: Asks for the destination, then moves the file.
+
+
+Rename a File:
+Command: "Rename file notes.txt"
+Action: Asks for the new name, then renames the file.
+
+
+Create a Folder:
+Command: "Create folder backups"
+Action: Creates a folder in the current directory.
+
+
+Delete a Folder:
+Command: "Delete folder backups"
+Action: Prompts for confirmation, then deletes the empty folder.
+
+
+
+Web Interactions
+
+Search Online:
+Command: "Search online for AI news"
+Action: Opens a Google search for the specified query.
+
+
+Search Wikipedia:
+Command: "Search Wikipedia for Python"
+Action: Reads a brief summary from Wikipedia.
+
+
+Open a Website:
+Command: "Open website google.com"
+Action: Opens the specified website in the default browser.
+
+
+Close Website:
+Command: "Close website"
+Action: Informs you to close the browser manually (not directly supported).
+
+
+
+System Control
+
+Check Time:
+Command: "What time is it?" or "Time"
+Action: Reports the current time (e.g., "The time is 14:30:00").
+
+
+Take a Screenshot:
+Command: "Take a screenshot"
+Action: Saves a screenshot as screenshot.png in the current directory.
+
+
+Shutdown:
+Command: "Shutdown"
+Action: Prompts for confirmation, then shuts down the computer.
+
+
+Restart:
+Command: "Restart"
+Action: Prompts for confirmation, then restarts the computer.
+
+
+Lock Computer:
+Command: "Lock computer"
+Action: Locks the Windows session.
+
+
+
+Mouse and Keyboard Control
+
+Move Mouse:
+Command: "Move mouse to 100 200"
+Action: Moves the mouse to the specified coordinates (x, y).
+
+
+Click Mouse:
+Command: "Click"
+Action: Performs a left-click at the current mouse position.
+
+
+Type Text:
+Command: "Type hello world"
+Action: Types the specified text at the current cursor position.
+
+
+
+Program Control
+
+Exit Program:
+Command: "Exit"
+Action: Closes the IntelliVoice Assistant.
+
+
+
+Follow-Up Actions
+
+After certain commands (e.g., file operations or mouse actions), the assistant may ask, "Did I perform the [action] correctly?"
+Respond with:
+Yes: Confirms the action was correct.
+No: Triggers undo or modification options.
+Modify: Prompts for a new command to adjust the action.
+Undo: Reverts the last action (if supported).
+Redo: Reapplies an undone action.
+Cancel: Cancels the follow-up process.
+
+
+
+Settings
+
+Click the "⚙️ Settings" button to open the settings window.
+Currently, settings are minimal but may be expanded in future updates to adjust preferences like speech rate or languagekeyboard shortcuts for quick access.
+
+Troubleshooting
+
+Voice Input Not Working:
+
+Ensure your microphone is connected and functional.
+Verify an active internet connection (required for Google Speech Recognition).
+Speak clearly and close to the microphone.
+Check assistant.log in the project directory for errors.
+
+
+No Speech Output:
+
+Ensure speakers are connected and working.
+Verify that the sapi5 text-to-speech engine is available (Windows-specific).
+Check assistant.log for TTS-related errors.
+
+
+Command Not Recognized:
+
+Ensure the command matches supported keywords (see process_command in main.py).
+Try typing the command if voice recognition fails.
+Speak slowly and clearly, avoiding background noise.
+
+
+spaCy Model Error:
+
+Run python -m spacy download en_core_web_sm to install the required language model.
+Ensure sufficient disk space and internet connectivity.
+
+
+File or Folder Operations Fail:
+
+Verify the file or folder name and path are correct.
+Ensure you have permissions to access the specified directory.
+Check assistant.log for specific error messages.
+
+
+Application Crashes:
+
+Check assistant.log for details on the error.
+Ensure all dependencies are installed correctly.
+Verify Python version compatibility (3.6+).
+
+
+
+Tips for Best Experience
+
+Microphone Quality: Use a high-quality microphone for better voice recognition.
+Clear Commands: Use concise commands matching the supported list (e.g., "Open browser" instead of "Please open my web browser").
+Internet Connection: Maintain a stable connection for web-based features.
+Log Review: Regularly check assistant.log for debugging if issues arise.
+Test Commands: Try text input first to confirm command syntax before using voice.
+
+Support
+For issues or feature requests, consult the README.md for additional details or contact the developer through the project's repository (if applicable). Ensure you provide relevant details from assistant.log when reporting issues.
+License
+IntelliVoice Assistant is licensed under the MIT License. See the LICENSE file (if provided) for details.
+
+Thank you for using IntelliVoice Assistant! Enjoy a seamless voice-activated experience.
