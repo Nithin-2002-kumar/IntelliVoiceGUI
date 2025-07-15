@@ -1,0 +1,5 @@
+pyttsx3==2.90
+speechrecognition==3.10.0
+pyautogui==0.9.54
+spacy==3.7.2
+wikipedia==1.4.0
